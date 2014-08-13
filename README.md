@@ -1,7 +1,7 @@
 ENDEWEM
 =======
 
-Implementation is based on "Methods for Determining the Statistical Significance of Enrichment or Depletion of Gene Ontology Classifications under Weighted Membership." Iacucci E1, Zingg HH, Perkins TJ.
+A toolbox for Enrichment or Depletion of Gene Ontology Classifications under Weighted Membership. Implementation is based on "Methods for Determining the Statistical Significance of Enrichment or Depletion of Gene Ontology Classifications under Weighted Membership." Iacucci E1, Zingg HH, Perkins TJ.
 
 
 ---
@@ -50,5 +50,4 @@ These parameters (r_i_genes, a) are used in method "setuptableEHM" to create tab
 These parameters (r_i_genes, c) are used in method "setuptableEHM" to create table T3.
 
 Individual probabilities are then caluculated using the method "probL", which takes as parameters  T1, r_i_genes,  observed_value,nv_genes, T2, T3[r_i_genes].
-
 
