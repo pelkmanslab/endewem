@@ -3,20 +3,11 @@ function weight = Phi1(drag, g, v)
 %Memebrship fucntion defined as:
 %
 % where
-% * drag is an ontology DRAG struct with: 
-% ** drag.V - all classificaitons or verticies (cell array of labels),
-% ** drag.E - all dependencies or directed edges (cell array of tuples of 
-%             any (v1,v2) if v1 is connected to v2 and are integers or 
-%             indexes in V),
-% ** drag.r - root classification,
-% ** drag.G - set of all genes (cell array of labels),
-% ** drag.a - is an annotation function, mapping classes in V to subsets 
-%             of G (cell array of cell arrays)
-%
+% * drag is an ontology DRAG struct. See newDrag() for details.
 % * g - is a gene of interest
 % * v - is a vertice or a classification from drag
 %
-%Function returns weight \in \Z^+.
+%Function returns weight \in \Z^+ (uint8).
 
 import endewem.*
 

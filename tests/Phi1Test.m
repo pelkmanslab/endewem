@@ -26,7 +26,7 @@ drag = map(drag, 'v2', 'g3');
 
 expectedWeight = uint8(1); % == g3 \in v2
 actualWeight = Phi1(drag, 'g3', 'v2');
-testCase.verifyEqual(expectedWeight, actualWeight, ...
+testCase.verifyEqual(actualWeight, expectedWeight, ...
     'Actual weight is different from expected.');
   
 end
@@ -40,7 +40,7 @@ drag = map(drag, 'v2', 'g3');
 
 expectedWeight = uint8(0); % == not g4 \in v2
 actualWeight = Phi1(drag, 'g4', 'v2');
-testCase.verifyEqual(expectedWeight, actualWeight, ...
+testCase.verifyEqual(actualWeight, expectedWeight, ...
     'Actual weight is different from expected.');
 
 end

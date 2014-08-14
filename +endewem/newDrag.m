@@ -9,7 +9,7 @@ function drag = newDrag()
 %             indexes in V),
 % ** drag.G - set of all genes (cell array of labels),
 % ** drag.A - is an annotation function, mapping classes in V to subsets 
-%             of G (cell array of cell arrays)
+%             of G (matrix of index pairs [v g] )
 
 drag = struct();
 drag.V = {};
