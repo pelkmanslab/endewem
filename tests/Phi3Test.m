@@ -1,4 +1,4 @@
-function tests = phi1Test()
+function tests = Phi3Test()
     tests = functiontests(localfunctions);
 end
 
@@ -19,17 +19,31 @@ drag = map(drag, 'v4', 'g2');
 
 end
 
-function testSmallDependency(testCase)
-
+function testTrivialDifferentiation(testCase)
 import endewem.*;
 
 drag = buildExampleDrag();
 drag = map(drag, 'v2', 'g3');
+drag.X = [1 3 4 1]; % some arbitrary gene expression levels
 
-% v2 is connected to v2 and v4 and all are annotating g2.
-expectedWeight = uint8(2); 
-actualWeight = Phi2(drag, 'g2', 'v1');
+% X(g_2) == 3
+expectedWeight = uint8(3); 
+actualWeight = Phi3(drag, 'g2', 'v1');
 testCase.verifyEqual(actualWeight, expectedWeight,...
     'Actual weight is different from expected.');
 
+end
+
+function testSubsetH(testCase)
+import endewem.*;
+
+drag = buildExampleDrag();
+drag = map(drag, 'v2', 'g3');
+drag.X = [1 3 4 1]; % some arbitrary gene expression levels
+
+expectedWeight = uint16(3 + 4); 
+H = find(ismember(drag.G, {'g2' 'g3'}));
+actualWeight = PhiH(drag, @Phi3, H, 'v2');
+testCase.verifyEqual(actualWeight, expectedWeight,...
+    'Actual weight is different from expected.');
 end

@@ -21,7 +21,7 @@ dependedVertices = getDependedVerticies(drag.E, [verticeIndex]);
 
 % Substract non-annotating verticies.
 dependedMapRows = find(ismember(drag.A(:,1), dependedVertices));
-weight = uint8(sum(ismember(drag.A(dependedMapRows,2), geneIndex)));
+weight = uint8(sum(ismember(drag.A(dependedMapRows, 2), geneIndex)));
 
 end
 
